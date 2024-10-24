@@ -1,13 +1,13 @@
-name: this will trigger on push and PR
+name: Trigger on push and PR
 
 on: 
   push:
     branches:
-      -main
+      - main
 
   pull_request:
     branches:
-      -main
+      - main
 
 jobs:
   echo-message:
