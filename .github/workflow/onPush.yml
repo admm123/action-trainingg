@@ -1,0 +1,19 @@
+name: this will trigger on push and PR
+
+on: 
+  push:
+    branches:
+      -main
+
+  pull-request:
+    branches:
+      -main
+
+jobs:
+  echo-message:
+    runs-on: ubuntu-latest
+  steps:
+    name: echo Slowakei
+    shell: bash
+    run: echo "Slowakei"
+    
