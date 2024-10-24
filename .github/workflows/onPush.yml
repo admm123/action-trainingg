@@ -12,8 +12,8 @@ on:
 jobs:
   echo-message:
     runs-on: ubuntu-latest
-  steps:
-    name: echo Slowakei
-    shell: bash
-    run: echo "Slowakei"
+    steps:
+      - name: echo Slowakei
+        shell: bash
+        run: echo "Slowakei"
     
