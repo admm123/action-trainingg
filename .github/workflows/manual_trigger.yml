@@ -1,0 +1,27 @@
+name: Manual Trigger
+
+on: 
+  workflow_dispatch:
+    inputs: 
+      name: 
+        description: Name of the person to greet
+        required: true
+        type: string
+      age:
+        description: Is the Person older than 18
+        required: true
+        type: boolean
+
+jobs:
+  echo-message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo Slowakei
+        shell: bash
+        run: |
+          if [ "${{ github.event.inputs.age }}" = "true" ]; then
+            echo "Hello ${{ github.event.inputs.name }}, you are an adult."
+          else
+            echo "Hello ${{ github.event.inputs.name }}, you are a child."
+          fi
+    
