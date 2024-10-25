@@ -32,5 +32,5 @@ jobs:
         if: success()
         run: echo The job has succeeded!
       - name: Job has failed
-        if: failed()
+        if: failure()
         run: echo Zhe job has failed
