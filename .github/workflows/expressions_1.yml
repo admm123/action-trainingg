@@ -20,7 +20,7 @@ jobs:
         if: ${{contains(env.myString,'This')}}
         run: echo true
       - name: format str
-        run: echo ${{format('Adam {0} {1} {2}','du','player'.'!')}}
+        run: echo ${{format('Adam {0} {1} {2}','du','player','!')}}
       - name: join issue labels
         if: github.event_name == 'Issues'
         run: echo join(github.event.issue.labels.*.name, ',')
