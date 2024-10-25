@@ -1,0 +1,34 @@
+name: Expression Action
+
+on:
+  push:
+    branches: 
+      - main
+  issues:
+    branches:
+      - main
+    types: [opened, labeled]
+
+env:
+  myString : ${{'This is Testing String!'}}
+
+jobs:
+  expression-funcions:
+  runs-on: ubuntu-latest
+  steps: 
+    - name: check if env contains substring
+      if: ${{contains(env.myString,'This')}}
+      run: echo true
+    - name: format str
+      run: echo format('Adam {0} {1} {2}','du','player'.'!')
+    - name: join issue labels
+      if: github.event_name == 'Issues'
+      run: echo join(github.event.issue.labels.*.name, ',')
+    - name: job to JSON
+      run: echo toJSON(github.job)
+    - name: JSON to Job
+      run: echo fromJSON('{"Hello":"Adam"}').Hello
+    - name: Zhe Job has succeeded
+      if: success()
+    - name: Job has failed
+      if: failed()
