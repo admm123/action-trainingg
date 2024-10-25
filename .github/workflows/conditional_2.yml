@@ -1,0 +1,17 @@
+name: Conditional Run With startsWith
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  Starts-With-Expression:
+    if: ${{ startsWith(github.repository, "admm123/")}}
+    runs-on: ubuntu-latest
+    steps:
+      run: echo "Repository starts with 'admm123/'"
+  No-Starts-With:
+    runs-on: ubuntu-latest
+    steps:
+      run: echo "This comes always!"
