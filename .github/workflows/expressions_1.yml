@@ -30,5 +30,7 @@ jobs:
         run: echo fromJSON('{"Hello":"Adam"}').Hello
       - name: Zhe Job has succeeded
         if: success()
+        run: echo The job has succeeded!
       - name: Job has failed
         if: failed()
+        run: echo Zhe job has failed
