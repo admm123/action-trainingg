@@ -23,7 +23,7 @@ jobs:
         run: echo ${{format('Adam {0} {1} {2}','du','player','!')}}
       - name: join issue labels
         if: github.event_name == 'Issues'
-        run: echo "The Job: ${{join(github.event.issue.labels.*.name, ',')}}"
+        run: echo "The Job:" ${{join(github.event.issue.labels.*.name, ',')}}
       - name: job to JSON
         run: echo ${{toJSON(github.job)}}
       - name: JSON to Job
