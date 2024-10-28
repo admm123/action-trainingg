@@ -12,7 +12,11 @@ jobs:
         echo "Msg 1"
         echo "Msg 2"
         echo "::endgroup::"
-     - name: "Step 1"
+     - name: "Step 1 Set Github env"
        run: echo "MY_VAL=hello" >> $GITHUB_ENV
-     - name: "Step 2"
+     - name: "Step 2 Use Github env"
        run: echo "Value of my value is $MY_VAL"
+     - name: "Step 3 Set Github Path"
+       run: echo "/path/to/bin" >> $GITHUB_PATH
+     - name: "Step 4 UsetGithub path"
+       run: echo "$GITHUB_PATH"
