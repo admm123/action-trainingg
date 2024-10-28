@@ -32,4 +32,4 @@ jobs:
      - name: "Step 8 mask a value"
        env:
         VERY_SECRET_KEY: "fsdfdfs6eg45r98aw4fre6g45s3f3se4f4s168dg4sre86gv1sd5"
-       run: "::add-mask::$VERY_SECRET_KEY"
+       run: echo "::add-mask::$VERY_SECRET_KEY"
