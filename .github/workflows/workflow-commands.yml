@@ -24,4 +24,6 @@ jobs:
        id: example_output
        run: echo "result=output_value" >> $GITHUB_OUTPUT
      - name: "Step 6 Use Output"
-       run: echo "${{example_output.outputs.result}}"
+       env: 
+        	OUTPUT_VALUE: ${{steps.exmample_output.outputs.result}}
+       run: echo "Value of the output is $OUTPUT_VALUE"
