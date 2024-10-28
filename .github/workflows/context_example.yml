@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: "Step 1 github context"
-      run: exho "${{ github.action }}"
+      run: echo "${{ github.action }}"
