@@ -1,0 +1,20 @@
+name: Example dependent job
+
+on:
+  push:
+    branch: 
+      - main
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Job 1 echo"
+        run: echo "This is Job 1"
+  
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1
+    steps: 
+      - name: "Job 2 echo"
+        run: echo "This is job 2"
