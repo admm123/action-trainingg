@@ -27,3 +27,5 @@ jobs:
        env: 
         OUTPUT_VALUE: ${{ steps.example_output.outputs.RESULT }}
        run: echo "Value of the output is $OUTPUT_VALUE"
+     - name: "Step 7 debugging msg"
+       run: echo "::debug::This shpuld be debugging message."
