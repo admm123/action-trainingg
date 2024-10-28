@@ -28,8 +28,8 @@ jobs:
         OUTPUT_VALUE: ${{ steps.example_output.outputs.RESULT }}
        run: echo "Value of the output is $OUTPUT_VALUE"
      - name: "Step 7 debugging msg"
-       run: echo "::debug::This shpuld be debugging message."
+       run: echo "::debug::This should be debugging message."
      - name: "Step 8 mask a value"
        env:
         VERY_SECRET_KEY: "fsdfdfs6eg45r98aw4fre6g45s3f3se4f4s168dg4sre86gv1sd5"
-       run: echo "::add-mask::$VERY_SECRET_KEY"
+       run: echo "::add-mask::${{ env.VERY_SECRET_KEY }}"
