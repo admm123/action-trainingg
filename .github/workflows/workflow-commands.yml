@@ -25,5 +25,5 @@ jobs:
        run: echo "RESULT=value" >> $GITHUB_OUTPUT
      - name: "Step 6 Use Output"
        env: 
-        OUTPUT_VALUE: ${{ steps.exmample_output.outputs.RESULT }}
+        OUTPUT_VALUE: ${{ steps.example_output.outputs.RESULT }}
        run: echo "Value of the output is $OUTPUT_VALUE"
