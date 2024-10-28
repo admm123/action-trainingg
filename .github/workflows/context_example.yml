@@ -1,0 +1,12 @@
+name: Context Examples
+
+on:
+  push:
+    branches: main
+
+jobs:
+  my_job:
+    runs-on: ubuntu-latest
+    steps:
+      name: "Step 1 github context"
+      run: exho "${{ github.action }}"
