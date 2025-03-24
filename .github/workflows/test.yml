@@ -1,17 +1,20 @@
-name: New Conditional Jobs
+name: Github Actions Demo
+on:
+  push:
+    branches: main
+jobs:
+  Explore-Github-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "The job was automatically triggered by a ${{github.event-name}}"
+      - run: echo "This job is now running on ${{runner.os}}"
+      - run: echo "The name of your branch is ${{github.ref}} and name of your repository is ${{github.repository}}"
+      - name: Check out the repository!
+        uses: actions/checkout@v4
+      - run: echo "The ${{github.repository}} repository has been cloned to the runner."
+      - name: List files in the repository!
+        run: |
+          ls ${{github.workspace}}
+      - run: echo "This jobs status is ${{job.status}}"
 
-on: 
-    workflow_dispatch
-
-jobs: 
-    second_job:
-        runs-on: ubuntu-latest
-        steps:
-            - name: print haha
-              run: echo "haha"
-              if: github.ref == 'refs/heads/main'
-            
-            - name: print bbbb
-              run: echo "bbbb"
-              if: github.ref != 'refs/heads/main'
             
