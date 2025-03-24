@@ -1,0 +1,20 @@
+name: Workflow Dispatch Run
+on:
+  workflow_dispatch:
+    inputs:
+      user:
+        description: "Who is triggering this Workflow?"
+        required: true
+        type: choice
+        options:
+          - aljoscha.irmer@global.ntt
+          - adam.spodniak@global.ntt
+          - hadi.uldumw@global.ntt
+jobs:
+  print_user:
+    runs-on: ubuntu-latest
+    if: ${{inputs.user}}
+    steps: 
+      - name: Print triggering User
+        run: echo "This action was triggered by ${{inputs.user}}" 
+
