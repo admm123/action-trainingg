@@ -4,6 +4,7 @@ on:
     inputs:
       deploy_target:
         description: "Target environment"
+        required: true
         type: environment
 
 jobs:
